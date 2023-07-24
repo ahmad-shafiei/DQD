@@ -1,0 +1,44 @@
+#!/bin/sh
+
+DEFAULT_FILE=Circuito.crc
+DIRMON=.
+FILETMP=qwerty.tmp
+
+test -n "$1" && param1=$1 
+test -n "$1" || echo -e " Controlla se esiste $DEFAULT_FILE\n"
+#test -z "$1" && test -f $DEFAULT_FILE || exit
+
+echo $FILETMP
+echo 'Interfaccia'
+$DIRMON/Interfaccia ${param1=$DEFAULT_FILE} $FILETMP
+$DIRMON/Monte << EOF
+$FILETMP
+EOF
+
+#\rm $FILETMP
+
+#test -f q.dat.4 && \rm q.dat.4
+#test -f q.dat.3 && mv q.dat.3 q.dat.4
+#test -f q.dat.2 && mv q.dat.2 q.dat.3
+#test -f q.dat.1 && mv q.dat.1 q.dat.2
+#test -f q.dat && mv q.dat q.dat.1
+paste riferimento.dat cariche.dat > q.dat && echo fatto
+
+#test -f i1.dat.4 && \rm i1.dat.4
+#test -f i1.dat.3 && mv i1.dat.3 i1.dat.4
+#test -f i1.dat.2 && mv i1.dat.2 i1.dat.3
+#test -f i1.dat.1 && mv i1.dat.1 i1.dat.2
+#test -f i1.dat && mv i1.dat i1.dat.1
+paste riferimento.dat correnti1.dat > i1.dat
+
+
+#test -f i2.dat.4 && \rm i2.dat.4
+#test -f i2.dat.3 && mv i2.dat.3 i2.dat.4
+#test -f i2.dat.2 && mv i2.dat.2 i2.dat.3
+#test -f i2.dat.1 && mv i2.dat.1 i2.dat.2
+#test -f i2.dat && mv i2.dat i2.dat.1
+paste riferimento.dat correnti2.dat > i2.dat
+
+#\rm correnti1.dat correnti2.dat riferimento.dat\
+# cariche.dat 
+

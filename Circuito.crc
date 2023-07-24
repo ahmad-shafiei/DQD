@@ -1,0 +1,70 @@
+#--------------------------------------------------------#
+# Queste sono righe di commento. Ogni volta che si vuole #
+# commentare qualcosa si usa il cancelletto. Anche le    #
+# righe vuote non vengono lette. Per il formato dei dati #
+# si veda ciascuna sezione sotto.                        #
+#--------------------------------------------------------#
+
+#********************* PARAMETRI **************************#
+#                      ^^^^^^^^^                           # 
+# I parametri sono indicati con una P maiuscola nel primo  #
+# spazio, poi segue il numero, la descrizione e quindi il  #
+# valore. La temperatura e' espressa in Kelvin             #
+#----------------------------------------------------------#
+
+P1	Temperature     0.2
+P2	Seed		-3432
+P3	Islands		2	
+P4	Externals	4
+P5	Junctions	3
+P6	Steps		1000
+P7	Averages	2000
+
+#********************* Giunzioni Tunnel  ********************#
+#	               ^^^^^^^^^ ^^^^^^                      #
+# Le capacita' tunnelling vengono indicate con una T nella   #
+# prima posizione, seguita da un numero identificatore. Poi  #
+# vengono messi i nodi fra cui e' posizionata ed in seguito  #
+# i valore della capacita' espressa in attofarad e della     #
+# costante di tunneling rate.                                #
+#------------------------------------------------------------#
+
+T1	1 3	2.	200.
+T2      1 2	1.09	200.
+T3	2 4	2.	200.
+
+#********************* Capacita' Classiche *********************#
+#                      ^^^^^^^^  ^^^^^^^^^                      #
+# Le capacita' vengono indicate con una C nella prima posizione #
+# seguita da un numero identificatore. Poi vengono messi i nodi #
+# fra cui e' posizionata ed in seguito il valore della capacita'#
+# espresso in attofarad.					#
+#                            					#
+#---------------------------------------------------------------#
+
+C1	1 5	1.9
+C2	2 6	1.9
+
+#C3	1 5	.8
+#C4	2 4	.8
+
+
+#********************* Tensioni Esterne *********************#
+#                      ^^^^^^^^ ^^^^^^^                      #
+# Le tensioni vengono indicate con una V seguita da un numero#
+# identificatore. Seguono i due nodi fra cui sono e' posta.  #
+# Per il momento e' gestibile solo una ddp tra un nodo e la  #
+# terra che viene indicata con il numero 0. Deve essere messo#
+# prima il numero del nodo e poi la terra. Segue il valore   #
+# iniziale ed il valore finale della tensione.	       #
+#------------------------------------------------------------#
+
+V3 	3 0 	25e-3      25e-3   
+V5      5 0     -10e-3     170e-3 
+V6      6 0     -10e-3     170e-3
+V4	4 0	25e-3      25e-3
+
+#V3 	3 0 	-35e-3   -35e-3      
+#V5      5 0     60e-3     -200e-3
+#V6      6 0     60e-3     -200e-3
+#V4	4 0	35e-3    35e-3
